@@ -1,203 +1,406 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shotlist — 第31集 (Seedance 2.0 提示词)</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#0f0f10;color:#e4e4e7;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:13px;line-height:1.6}.container{max-width:1600px;margin:0 auto;padding:24px}header.top{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #27272a}header.top h1{font-size:22px;font-weight:700;color:#fafafa;margin-bottom:6px}header.top h1 span{color:#f87171;font-weight:600}header.top .sub{color:#a1a1aa;font-size:12px;margin-bottom:14px}.stats{display:flex;gap:16px}.stat{background:#18181b;border:1px solid #27272a;border-radius:8px;padding:10px 20px;text-align:center;min-width:80px}.stat .v{font-size:22px;font-weight:700;color:#f87171}.stat .l{font-size:10px;color:#71717a;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}.toolbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;align-items:center}.toolbar input[type=text]{flex:1;min-width:200px;padding:8px 14px;background:#18181b;border:1px solid #3f3f46;border-radius:6px;color:#e4e4e7;font-size:12px}.toolbar input[type=text]:focus{outline:none;border-color:#f87171}.toolbar select,.toolbar button{padding:8px 14px;background:#18181b;border:1px solid #3f3f46;border-radius:6px;color:#e4e4e7;font-size:12px;cursor:pointer}.toolbar button:hover{background:#27272a}.toolbar button.clear{color:#f87171}.toc{background:#18181b;border:1px solid #27272a;border-radius:8px;padding:12px 16px;margin-bottom:24px}.toc-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toc-label{font-size:11px;color:#71717a;text-transform:uppercase;letter-spacing:.5px;font-weight:600}.toc a{color:#f87171;text-decoration:none;font-size:12px;padding:3px 10px;border:1px solid #3f3f46;border-radius:4px}h2.block-title{font-size:16px;font-weight:700;color:#fafafa;margin:28px 0 16px;padding-bottom:8px;border-bottom:2px solid #f87171}h2.block-title.first{margin-top:0}section.scene{background:#18181b;border:1px solid #27272a;border-radius:10px;margin-bottom:28px;overflow:hidden}section.scene.pal-red{border-top:3px solid #f87171}.scene-head{padding:18px 22px 14px;background:#1c1c1f}.scene-num-row{margin-bottom:6px}.scene-num{display:inline-block;background:#f87171;color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:4px}.scene-title{font-size:16px;font-weight:700;color:#fafafa;margin-bottom:6px}.scene-meta{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:#a1a1aa}.scene-meta b{color:#d4d4d8}.scene-meta .shot-count{background:#27272a;padding:2px 10px;border-radius:10px;color:#f87171;font-weight:600}.table-wrap{overflow-x:auto}table.shotlist{width:100%;border-collapse:collapse;font-size:12px}table.shotlist th{background:#222226;color:#a1a1aa;font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.5px;padding:10px 12px;text-align:left;border-bottom:2px solid #3f3f46;white-space:nowrap}table.shotlist td{padding:10px 12px;border-bottom:1px solid #27272a;vertical-align:top}table.shotlist tr:hover td{background:#1c1c20}.c-num{font-weight:700;color:#f87171;white-space:nowrap;font-size:12px}.c-plan{white-space:nowrap}.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}.p-ws{background:#1e3a5f;color:#60a5fa}.p-ms{background:#1e3f2e;color:#4ade80}.p-cu{background:#3f2e1e;color:#fbbf24}.p-ecu{background:#3f1e1e;color:#f87171}.c-cam{color:#a1a1aa;font-size:11px;line-height:1.5}.c-act{color:#d4d4d8;line-height:1.6}.c-script{background:#1a1a1d;border-left:3px solid #3f3f46}.script-inner{font-size:11px;color:#a1a1aa;line-height:1.7;white-space:pre-wrap}.script-inner .char{color:#f87171;font-weight:600}.script-inner .dir{color:#71717a;font-style:italic}.script-inner .vo{color:#fbbf24}.script-inner .os{color:#c084fc}.c-prompt{background:#141416;border-left:3px solid #f87171;min-width:450px}.prompt-block{font-size:11px;line-height:1.75;color:#d4d4d8;white-space:pre-wrap;word-break:break-word;font-family:"PingFang SC","Microsoft YaHei",sans-serif}.prompt-header{display:flex;align-items:center;gap:8px;margin:14px 0 6px;padding-top:10px;border-top:1px solid #333}.prompt-header:first-child{border-top:none;margin-top:0;padding-top:0}.prompt-header b{color:#4ade80;font-size:11px}.prompt-header .tag{color:#71717a;font-size:10px}.prompt-header .dur{color:#fbbf24;font-size:10px;font-weight:600}.copy-btn{padding:2px 8px;background:#27272a;border:1px solid #3f3f46;border-radius:4px;color:#a1a1aa;font-size:10px;cursor:pointer}.copy-btn:hover{background:#3f3f46;color:#fafafa}.copy-btn.copied{background:#166534;border-color:#22c55e;color:#4ade80}.asset-note{background:#1c1c20;border:1px dashed #3f3f46;border-radius:6px;padding:8px 12px;margin-bottom:10px;font-size:10px;color:#71717a;line-height:1.6}.asset-note b{color:#a1a1aa}.style-ref{background:#1a1a1d;border:1px solid #3f3f46;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:11px;color:#a1a1aa;line-height:1.8}.style-ref h3{color:#fafafa;font-size:13px;margin-bottom:8px}.style-ref .label{color:#f87171;font-weight:600}@media print{body{background:#fff;color:#000}.toolbar,.toc,.copy-btn{display:none!important}table.shotlist th{background:#f0f0f0;color:#333}.c-prompt,.c-script{background:#fafafa}}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>我永远最喜欢砂糖对弈竞猜汇总实时数据看板</title>
+    <style>
+:root {
+    color-scheme: light;
+    --bg: #f9f9f7;
+    --card: #fcfcfb;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --line: #e1e0d9;
+    --border: rgba(11, 11, 11, 0.10);
+    --red: #e34948;
+    --red-tint: rgba(227, 73, 72, 0.12);
+    --blue: #2a78d6;
+    --blue-tint: rgba(42, 120, 214, 0.12);
+    --bar: #eb6834;
+    --bar-track: #f0e8df;
+    --hover: #f2f4fa;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+        color-scheme: dark;
+        --bg: #0d0d0d;
+        --card: #1a1a19;
+        --ink: #ffffff;
+        --ink-2: #c3c2b7;
+        --muted: #898781;
+        --line: #2c2c2a;
+        --border: rgba(255, 255, 255, 0.10);
+        --red: #e66767;
+        --red-tint: rgba(230, 103, 103, 0.18);
+        --blue: #3987e5;
+        --blue-tint: rgba(57, 135, 229, 0.18);
+        --bar: #d95926;
+        --bar-track: #2c2c2a;
+        --hover: #232321;
+    }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0d0d0d;
+    --card: #1a1a19;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --line: #2c2c2a;
+    --border: rgba(255, 255, 255, 0.10);
+    --red: #e66767;
+    --red-tint: rgba(230, 103, 103, 0.18);
+    --blue: #3987e5;
+    --blue-tint: rgba(57, 135, 229, 0.18);
+    --bar: #d95926;
+    --bar-track: #2c2c2a;
+    --hover: #232321;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+.container { max-width: 1120px; margin: 0 auto; padding: 20px 16px 40px; }
+
+/* ---------- 顶栏 ---------- */
+
+.topbar {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap;
+}
+
+.topbar h1 { font-size: 19px; font-weight: 700; }
+.topbar h1 .sub { font-size: 13px; font-weight: 400; color: var(--ink-2); margin-left: 8px; }
+.topbar .meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+.clock {
+    font-variant-numeric: tabular-nums;
+    font-size: 15px; font-weight: 600; color: var(--ink-2);
+    background: var(--card); border: 1px solid var(--border);
+    padding: 5px 12px; border-radius: 999px;
+}
+#theme-toggle {
+    font: inherit; font-size: 13px; cursor: pointer;
+    background: var(--card); color: var(--ink);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 12px;
+}
+#theme-toggle:hover { background: var(--hover); }
+
+/* ---------- 统计卡片 ---------- */
+
+.tiles {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-bottom: 16px;
+}
+.tile {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px;
+}
+.tile-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.tile-value {
+    font-size: 24px; font-weight: 700;
+    font-variant-numeric: tabular-nums; line-height: 1.2;
+}
+.tile-name { font-size: 17px; line-height: 1.4; }
+.tile-sub { font-size: 13px; font-weight: 400; color: var(--muted); margin-left: 4px; }
+
+/* ---------- 卡片通用 ---------- */
+
+.card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px 20px; margin-bottom: 16px;
+}
+.card-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 12px;
+}
+.card-head h2 { font-size: 16px; }
+.card-head .legend { font-size: 12px; color: var(--ink-2); }
+
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin: 0 3px 0 6px; }
+.dot-red { background: var(--red); }
+.dot-blue { background: var(--blue); }
+
+/* ---------- 官方结果 ---------- */
+
+.slot-label { font-size: 13px; color: var(--ink-2); margin-bottom: 10px; }
+.slot-label b { color: var(--ink); }
+.slot-row { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.slot-pill {
+    flex: 1 1 120px; min-width: 110px;
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px 6px; text-align: center;
+    background: var(--card);
+}
+.slot-pill.current {
+    outline: 2px solid var(--blue); outline-offset: 1px;
+    background: var(--blue-tint);
+}
+.slot-time { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.slot-pending { color: var(--muted); font-size: 13px; font-weight: 600; }
+
+/* ---------- 徽章 ---------- */
+
+.badge {
+    display: inline-block; min-width: 32px;
+    padding: 2px 10px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; color: #fff;
+    text-align: center;
+}
+.badge-left { background: var(--red); }
+.badge-right { background: var(--blue); }
+.badge-none { background: var(--line); color: var(--muted); }
+.fixed-tag {
+    display: inline-block; margin-left: 6px;
+    font-size: 11px; color: var(--ink-2);
+    border: 1px solid var(--border);
+    background: var(--hover);
+    border-radius: 4px; padding: 0 5px;
+    vertical-align: 1px;
+}
+
+/* ---------- 平台标签 ---------- */
+
+.pchip {
+    display: inline-block; font-size: 11px; color: #fff;
+    border-radius: 4px; padding: 0 5px;
+    margin-right: 6px; vertical-align: 1px;
+}
+.pchip-weibo { background: #eb6834; }
+.pchip-xhs   { background: #1baf7a; }
+.pchip-bili  { background: #4a3aa7; }
+.pchip-custom { background: #6b7280; }
+
+/* ---------- 博主标签（素人/博主/自定义） ---------- */
+
+.tchip {
+    display: inline-block; margin-right: 6px; vertical-align: 1px;
+    font-size: 11px; font-weight: 500; line-height: 1.6;
+    color: var(--ink-2); background: var(--hover);
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 0 5px;
+}
+.tchip-blogger { color: var(--blue); background: var(--blue-tint); border-color: transparent; }
+
+.filter-select {
+    font: inherit; font-size: 12px;
+    background: var(--card); color: var(--ink);
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 2px 6px; margin-right: 10px;
+}
+
+/* ---------- 排行表 ---------- */
+
+.table-scroll { overflow-x: auto; }
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th, .data-table td {
+    padding: 10px 12px; text-align: left;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+.data-table thead th {
+    font-size: 12px; font-weight: 600; color: var(--muted);
+    background: var(--card);
+}
+.data-table tbody tr:hover { background: var(--hover); }
+.data-table .rank { width: 40px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.data-table .name { font-weight: 600; }
+.data-table .pred { width: 96px; }
+.data-table .plat { width: 72px; }
+#ranking-table .plat .pchip { margin-right: 0; }
+
+/* 实时预测排行：横向滚动时固定 排名+平台+博主 三列，手机上滑动也能对照博主名。
+   平台列定宽 72px，故博主列的吸附起点 = 40（排名）+ 72（平台）。 */
+#ranking-table th:nth-child(-n+3),
+#ranking-table td:nth-child(-n+3) {
+    position: sticky;
+    z-index: 1;
+}
+#ranking-table thead th:nth-child(-n+3) { z-index: 2; }
+#ranking-table td:nth-child(2),
+#ranking-table th:nth-child(2) { left: 40px; }
+#ranking-table td:nth-child(3),
+#ranking-table th:nth-child(3) { left: 112px; }
+#ranking-table tbody td:nth-child(-n+3) { background: var(--card); }
+#ranking-table tbody tr:hover td:nth-child(-n+3) { background: var(--hover); }
+
+.rate-wrap { display: flex; align-items: center; gap: 8px; min-width: 210px; }
+.rate-bar {
+    flex: 1; height: 6px; border-radius: 3px;
+    background: var(--bar-track); overflow: hidden;
+}
+.rate-fill { height: 100%; background: var(--bar); border-radius: 3px; }
+.rate-num {
+    width: 56px; text-align: right; font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+.rate-sub { width: 48px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ---------- 七日汇总 ---------- */
+
+.day-block {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 14px 20px; margin-bottom: 12px;
+}
+.day-block summary {
+    cursor: pointer; font-size: 15px; font-weight: 700;
+    list-style-position: inside;
+    display: flex; align-items: baseline; gap: 10px;
+}
+.day-block summary:hover { color: var(--ink-2); }
+.summary-sub { font-size: 12px; font-weight: 400; color: var(--muted); }
+.day-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.day-table th, .day-table td {
+    padding: 6px 4px; text-align: center;
+    border-bottom: 1px solid var(--line); white-space: nowrap;
+}
+.day-table thead th { font-size: 12px; font-weight: 600; color: var(--muted); }
+.day-table .name { text-align: left; font-size: 13px; min-width: 130px; }
+.p-cell {
+    min-width: 64px; border-radius: 6px;
+    font-size: 13px; font-weight: 600;
+}
+.p-cell-left { color: var(--red); background: var(--red-tint); }
+.p-cell-right { color: var(--blue); background: var(--blue-tint); }
+.p-cell-none { color: var(--muted); }
+.official-row td { padding-top: 4px; }
+.official-row .label-cell { font-size: 12px; color: var(--muted); }
+.official-row .p-cell { background: transparent; border-bottom: none; }
+
+/* ---------- 其他 ---------- */
+
+.empty {
+    color: var(--muted); text-align: center;
+    padding: 28px 0; font-size: 13px;
+}
+.muted { color: var(--muted); }
+
+.footer {
+    text-align: center; font-size: 12px; color: var(--muted);
+    padding: 20px 16px 32px; line-height: 1.8;
+}
+.footer b { color: var(--ink-2); font-weight: 600; }
+
+@media (max-width: 768px) {
+    .container { padding: 12px 10px 32px; }
+    .tiles { grid-template-columns: repeat(2, 1fr); }
+    .tile-value { font-size: 20px; }
+    .topbar h1 { font-size: 16px; }
+    .data-table th, .data-table td { padding: 8px; }
+    .rate-wrap { min-width: 170px; }
+}
+</style>
 </head>
 <body>
-<div class="container">
-<header class="top"><h1>Shotlist — <span>第31集</span> (Seedance 2.0 提示词)</h1><div class="sub">Prepared for 《他不是属于我的光》 · 2 scenes · 10 shots · 4 prompts · 9:16 vertical · 高奢商业短剧质感 · 台词按4字/秒计时</div><div class="stats"><div class="stat"><div class="v">2</div><div class="l">scenes</div></div><div class="stat"><div class="v">10</div><div class="l">shots</div></div><div class="stat"><div class="v">4</div><div class="l">prompts</div></div></div></header>
-<div class="style-ref"><h3>项目影像风格基准</h3><p><span class="label">画幅：</span>9:16竖屏。<span class="label">肤质：</span>商业美妆级，catchlight。<span class="label">光线：</span>会议室冷白专业光；江氏总裁办公室冷白光+落地窗。<span class="label">台词时长：</span>每秒约4字。</p></div>
-<div class="toolbar"><input type="text" id="search" placeholder="搜索台词、动作、场景..."><select id="planFilter"><option value="">All plans</option><option value="WS">Wide shot</option><option value="MS">Medium shot</option><option value="CU">Close-up</option><option value="ECU">Extreme close-up</option></select><button onclick="window.print()">🖨 Print / PDF</button><button class="clear" onclick="resetFilters()">Reset</button></div>
-<div class="toc"><div class="toc-row"><span class="toc-label">Scenes</span><a href="#sc31-1">31-1 公司会议室（审计发现300万异常）</a><a href="#sc31-2">31-2 江氏总裁办公室（追查天诚科技+沈雨瑶）</a></div></div>
-<h2 class="block-title first">Episode 31</h2>
+    <header class="topbar">
+        <div>
+            <h1>我永远最喜欢砂糖对弈竞猜汇总<span class="sub">实时数据看板</span></h1>
+            <div class="meta">数据更新于 <b>2026-09-24 11:04:10</b> · 源文件修改于 2026-09-24 10:42:47</div>
+        </div>
+        <div class="topbar-right">
+            <div class="clock" id="clock">11:04:10</div>
+            <button id="theme-toggle" type="button">切换主题</button>
+        </div>
+    </header>
 
-<section class="scene pal-red" id="sc31-1">
-  <div class="scene-head"><div class="scene-num-row"><span class="scene-num">SCENE 31-1</span></div><h2 class="scene-title">INT. 公司·会议室 — 日</h2><div class="scene-meta"><span><b>Mood:</b> <i>严肃、审计异常、300万咨询费、空壳公司</i></span><span><b>Characters:</b> 黎泱、财务总监、老陈</span><span class="shot-count">5 shots · 2 prompts</span></div></div>
-  <div class="table-wrap"><table class="shotlist"><colgroup><col style="width:50px"><col style="width:100px"><col style="width:130px"><col style="width:auto"><col style="width:22%"><col style="width:42%"></colgroup><thead><tr><th>#</th><th>Plan</th><th>Camera</th><th>Action</th><th>Scene Text</th><th>Seedance 2.0 提示词</th></tr></thead><tbody>
+    <main class="container">
+        
+    <div class="tiles">
+        <div class="tile"><div class="tile-label">博主总数</div><div class="tile-value">4</div></div>
+        <div class="tile"><div class="tile-label">本局已预测</div><div class="tile-value">0/4</div></div>
+        <div class="tile"><div class="tile-label">今日已开赛</div><div class="tile-value">0<span class="tile-sub">场</span></div></div>
+        <div class="tile"><div class="tile-label">历史胜率榜首</div><div class="tile-value tile-name">八周年庆<span class="tile-sub">100.0%</span></div></div>
+    </div>
+        <section class="card">
+    <div class="slot-label">官方结果 · <b>2026年9月30日（历史回退）</b> · 当前时段：10:00-12:00</div>
+    <div class="slot-row"><div class="slot-pill"><div class="slot-time">10:00-12:00</div><span class="badge badge-left">左</span></div><div class="slot-pill"><div class="slot-time">12:00-14:00</div><span class="slot-pending">待定</span></div><div class="slot-pill"><div class="slot-time">14:00-16:00</div><span class="slot-pending">待定</span></div><div class="slot-pill"><div class="slot-time">16:00-18:00</div><span class="slot-pending">待定</span></div><div class="slot-pill"><div class="slot-time">18:00-20:00</div><span class="slot-pending">待定</span></div><div class="slot-pill"><div class="slot-time">20:00-22:00</div><span class="slot-pending">待定</span></div><div class="slot-pill"><div class="slot-time">22:00-24:00</div><span class="slot-pending">待定</span></div></div></section>
+        <section class="card">
+    <div class="card-head">
+        <h2>实时预测排行</h2>
+        <div>
+            <label class="legend" for="platform-filter">平台筛选：
+                <select id="platform-filter" class="filter-select">
+                    <option value="all">全部平台</option>
+                    <option value="weibo">微博</option>
+                    <option value="xhs">小红书</option>
+                    <option value="bilibili">B站</option>
+                    <option value="custom">自定义</option>
+                </select>
+            </label>
+            <span class="legend">方向：<span class="dot dot-red"></span>左 <span class="dot dot-blue"></span>右 · 博主列标签 = 素人/博主分类 · 「已修正」= 人工改动过</span>
+        </div>
+    </div>
+    <div class="table-scroll">
+        <table class="data-table" id="ranking-table">
+            <thead><tr><th class="rank">#</th><th class="plat">平台</th><th>博主</th><th class="pred">本局竞猜</th><th>今日统计</th><th>历史统计</th></tr></thead>
+            <tbody id="ranking-tbody"><tr data-platform="custom"><td class="rank">1</td><td class="plat"><span class="pchip pchip-custom">自定义</span></td><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="pred"><span class="badge badge-none">—</span></td><td><span class="muted">—</span></td><td><div class="rate-wrap" title="胜 1 局 / 共 1 局"><div class="rate-bar"><div class="rate-fill" style="width:100.0%"></div></div><span class="rate-num">100.0%</span><span class="rate-sub">1/1</span></div></td></tr><tr data-platform="custom"><td class="rank">2</td><td class="plat"><span class="pchip pchip-custom">自定义</span></td><td class="name"><span class="tchip">自定义</span>全压红</td><td class="pred"><span class="badge badge-none">—</span></td><td><span class="muted">—</span></td><td><div class="rate-wrap" title="胜 1 局 / 共 1 局"><div class="rate-bar"><div class="rate-fill" style="width:100.0%"></div></div><span class="rate-num">100.0%</span><span class="rate-sub">1/1</span></div></td></tr><tr data-platform="custom"><td class="rank">3</td><td class="plat"><span class="pchip pchip-custom">自定义</span></td><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="pred"><span class="badge badge-none">—</span></td><td><span class="muted">—</span></td><td><div class="rate-wrap" title="胜 1 局 / 共 1 局"><div class="rate-bar"><div class="rate-fill" style="width:100.0%"></div></div><span class="rate-num">100.0%</span><span class="rate-sub">1/1</span></div></td></tr><tr data-platform="custom"><td class="rank">4</td><td class="plat"><span class="pchip pchip-custom">自定义</span></td><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="pred"><span class="badge badge-none">—</span></td><td><span class="muted">—</span></td><td><div class="rate-wrap" title="胜 0 局 / 共 1 局"><div class="rate-bar"><div class="rate-fill" style="width:0.0%"></div></div><span class="rate-num">0.0%</span><span class="rate-sub">0/1</span></div></td></tr></tbody>
+        </table>
+    </div></section>
+        <section><div class="card-head"><h2>七日汇总</h2></div><details class="day-block" open><summary>2026年10月6日<span class="summary-sub">官方已开 0 场 · 4 位博主参与</span></summary><div class="table-scroll"><table class="day-table"><thead><tr><th class="name">博主</th><th>10:00-12:00</th><th>12:00-14:00</th><th>14:00-16:00</th><th>16:00-18:00</th><th>18:00-20:00</th><th>20:00-22:00</th><th>22:00-24:00</th></tr></thead><tbody><tr class="official-row"><td class="label-cell">官方结果</td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td></tr><tr><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="p-cell p-cell-right" title="九周年庆 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-right" title="九周年庆 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压红</td><td class="p-cell p-cell-left" title="全压红 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="p-cell p-cell-right" title="全压蓝 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="p-cell p-cell-left" title="八周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 22:00-24:00 · 左">左</td></tr></tbody></table></div></details><details class="day-block" ><summary>2026年10月5日<span class="summary-sub">官方已开 0 场 · 4 位博主参与</span></summary><div class="table-scroll"><table class="day-table"><thead><tr><th class="name">博主</th><th>10:00-12:00</th><th>12:00-14:00</th><th>14:00-16:00</th><th>16:00-18:00</th><th>18:00-20:00</th><th>20:00-22:00</th><th>22:00-24:00</th></tr></thead><tbody><tr class="official-row"><td class="label-cell">官方结果</td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td></tr><tr><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="p-cell p-cell-right" title="九周年庆 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压红</td><td class="p-cell p-cell-left" title="全压红 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="p-cell p-cell-right" title="全压蓝 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="p-cell p-cell-left" title="八周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 22:00-24:00 · 左">左</td></tr></tbody></table></div></details><details class="day-block" ><summary>2026年10月4日<span class="summary-sub">官方已开 0 场 · 4 位博主参与</span></summary><div class="table-scroll"><table class="day-table"><thead><tr><th class="name">博主</th><th>10:00-12:00</th><th>12:00-14:00</th><th>14:00-16:00</th><th>16:00-18:00</th><th>18:00-20:00</th><th>20:00-22:00</th><th>22:00-24:00</th></tr></thead><tbody><tr class="official-row"><td class="label-cell">官方结果</td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td></tr><tr><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="p-cell p-cell-right" title="九周年庆 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-right" title="九周年庆 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-right" title="九周年庆 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压红</td><td class="p-cell p-cell-left" title="全压红 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="p-cell p-cell-right" title="全压蓝 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="p-cell p-cell-left" title="八周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 22:00-24:00 · 右">右</td></tr></tbody></table></div></details><details class="day-block" ><summary>2026年10月3日<span class="summary-sub">官方已开 0 场 · 4 位博主参与</span></summary><div class="table-scroll"><table class="day-table"><thead><tr><th class="name">博主</th><th>10:00-12:00</th><th>12:00-14:00</th><th>14:00-16:00</th><th>16:00-18:00</th><th>18:00-20:00</th><th>20:00-22:00</th><th>22:00-24:00</th></tr></thead><tbody><tr class="official-row"><td class="label-cell">官方结果</td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td></tr><tr><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="p-cell p-cell-left" title="九周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-right" title="九周年庆 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-right" title="九周年庆 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压红</td><td class="p-cell p-cell-left" title="全压红 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="p-cell p-cell-right" title="全压蓝 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="p-cell p-cell-right" title="八周年庆 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 22:00-24:00 · 右">右</td></tr></tbody></table></div></details><details class="day-block" ><summary>2026年10月2日<span class="summary-sub">官方已开 0 场 · 4 位博主参与</span></summary><div class="table-scroll"><table class="day-table"><thead><tr><th class="name">博主</th><th>10:00-12:00</th><th>12:00-14:00</th><th>14:00-16:00</th><th>16:00-18:00</th><th>18:00-20:00</th><th>20:00-22:00</th><th>22:00-24:00</th></tr></thead><tbody><tr class="official-row"><td class="label-cell">官方结果</td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td></tr><tr><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="p-cell p-cell-right" title="九周年庆 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压红</td><td class="p-cell p-cell-left" title="全压红 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="p-cell p-cell-right" title="全压蓝 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="p-cell p-cell-left" title="八周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="八周年庆 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="八周年庆 · 22:00-24:00 · 右">右</td></tr></tbody></table></div></details><details class="day-block" ><summary>2026年10月1日<span class="summary-sub">官方已开 0 场 · 4 位博主参与</span></summary><div class="table-scroll"><table class="day-table"><thead><tr><th class="name">博主</th><th>10:00-12:00</th><th>12:00-14:00</th><th>14:00-16:00</th><th>16:00-18:00</th><th>18:00-20:00</th><th>20:00-22:00</th><th>22:00-24:00</th></tr></thead><tbody><tr class="official-row"><td class="label-cell">官方结果</td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td></tr><tr><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="p-cell p-cell-left" title="九周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-right" title="九周年庆 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压红</td><td class="p-cell p-cell-left" title="全压红 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="p-cell p-cell-right" title="全压蓝 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="p-cell p-cell-left" title="八周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="八周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="八周年庆 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="八周年庆 · 22:00-24:00 · 右">右</td></tr></tbody></table></div></details><details class="day-block" ><summary>2026年9月30日<span class="summary-sub">官方已开 1 场 · 4 位博主参与</span></summary><div class="table-scroll"><table class="day-table"><thead><tr><th class="name">博主</th><th>10:00-12:00</th><th>12:00-14:00</th><th>14:00-16:00</th><th>16:00-18:00</th><th>18:00-20:00</th><th>20:00-22:00</th><th>22:00-24:00</th></tr></thead><tbody><tr class="official-row"><td class="label-cell">官方结果</td><td class="p-cell p-cell-official"><span class="badge badge-left">左</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td><td class="p-cell p-cell-official"><span class="badge badge-none">—</span></td></tr><tr><td class="name"><span class="tchip">自定义</span>九周年庆</td><td class="p-cell p-cell-left" title="九周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="九周年庆 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-right" title="九周年庆 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="九周年庆 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-left" title="九周年庆 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压红</td><td class="p-cell p-cell-left" title="全压红 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 12:00-14:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 16:00-18:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 18:00-20:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-left" title="全压红 · 22:00-24:00 · 左">左</td></tr><tr><td class="name"><span class="tchip">自定义</span>全压蓝</td><td class="p-cell p-cell-right" title="全压蓝 · 10:00-12:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 14:00-16:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 20:00-22:00 · 右">右</td><td class="p-cell p-cell-right" title="全压蓝 · 22:00-24:00 · 右">右</td></tr><tr><td class="name"><span class="tchip">自定义</span>八周年庆</td><td class="p-cell p-cell-left" title="八周年庆 · 10:00-12:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 12:00-14:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 14:00-16:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 16:00-18:00 · 右">右</td><td class="p-cell p-cell-right" title="八周年庆 · 18:00-20:00 · 右">右</td><td class="p-cell p-cell-left" title="八周年庆 · 20:00-22:00 · 左">左</td><td class="p-cell p-cell-right" title="八周年庆 · 22:00-24:00 · 右">右</td></tr></tbody></table></div></details></section>
+    </main>
 
-<tr data-scene="31-1" data-plan="MS"><td class="c-num">1.1</td><td class="c-plan"><span class="badge p-ms">Medium shot</span></td><td class="c-cam">50mm · 固定<br>严肃</td><td class="c-act">会议室内气氛严肃，财务总监将审计报告摊在桌上。</td>
-<td class="c-script" rowspan="3"><div class="script-inner"><span class="char">财务总监</span>（严肃）："江总，黎主管，季度审计中发现一笔300万的咨询费支出，收款方是天诚科技有限公司，但这家公司没有实际办公地址，也没有任何社保缴纳记录。"
-<span class="dir">〔58字 ≈ 14.5秒〕</span>
-<span class="char">黎泱</span>（皱眉）："天诚科技？查一下这笔钱最终流向了哪里。"
-<span class="dir">〔16字 ≈ 4秒〕</span></div></td>
-<td class="c-prompt" rowspan="3"><div class="asset-note"><b>@image1</b>=财务总监.png &nbsp; <b>@image2</b>=黎泱职业.png &nbsp; <b>@image3</b>=公司-会议室.png</div><div class="prompt-header"><b>提示词 1</b><span class="tag">[MS→CU · 财务总监"300万咨询费...天诚科技空壳" + 黎泱"查资金流向"]</span><span class="dur">15秒 · 对白18.5秒（跨提示词）</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div><div class="prompt-block">多机位剪辑（multi-shot）。
+    <footer class="footer">
+        数据仅供参考，请理性分析<br>
+        数据来源：data.db（分析结果 / 官方结果 / 博主名单）· 生成于 2026-09-24 11:04:10
+    </footer>
 
-@image1（财务总监，中年男性，正装严肃）@image2（黎泱，坐在对面）@image3（公司会议室，冷白专业光，审计报告摊在桌上）— 同前。道具：审计报告。
+    <script>
+(function () {
+    // 顶栏时钟：初始值由服务端渲染，这里只负责逐秒走表
+    var clock = document.getElementById('clock');
+    function tick() {
+        try {
+            clock.textContent = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+        } catch (e) { /* 忽略 */ }
+    }
+    setInterval(tick, 1000);
 
-⚠️对白规则：财务总监台词前半（约11秒）在镜头1；黎泱"天诚科技？查一下..."（4秒）在镜头2。
-⚠️本视频严格只有3个镜头。
+    // 主题：默认跟随系统，手动切换后写入 localStorage（部分环境禁用，需容错）
+    var root = document.documentElement;
+    try {
+        var saved = localStorage.getItem('yys_theme');
+        if (saved === 'light' || saved === 'dark') {
+            root.dataset.theme = saved;
+        }
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+            root.dataset.theme = next;
+            localStorage.setItem('yys_theme', next);
+        });
+    } catch (e) { /* localStorage 不可用时仅跟随系统 */ }
 
-【镜头1】（7秒）
-机位：50mm中景，竖屏。固定严肃。
-会议室内气氛严肃，财务总监汇报。
-⚠️⚠️⚠️微表演：
-- ① 会议室——冷白光，气氛凝重
-- ② 财务总监站在投影前——将审计报告摊在桌上
-- ③ "江总，黎主管"（1秒）——他神色严肃
-- ④ "季度审计中发现一笔300万的咨询费支出"（3.5秒）——"300万"他加重
-- ⑤ "收款方是天诚科技有限公司"（2.5秒，但本镜头7秒，台词跨镜头）——他指着报告
-
-【镜头2】（5秒）
-机位：85mm F1.4，财务总监特写。固定。
-财务总监继续说明异常。
-⚠️⚠️⚠️微表演：
-- ① 财务总监台词余音"天诚科技有限公司"
-- ② "但这家公司没有实际办公地址"（2.5秒）——他翻到下一页
-- ③ "也没有任何社保缴纳记录。"（2.5秒，但本镜头5秒，台词跨镜头）——"空壳公司"的暗示
-- ④ 黎泱的眉头皱了起来
-
-【镜头3】（3秒）
-机位：100mm F1.4，黎泱特写。固定。
-黎泱皱眉，立刻下令追查。
-⚠️⚠️⚠️微表演：
-- ① 财务总监台词余音"社保缴纳记录。"
-- ② 黎泱的眉头紧锁——"天诚科技？"（1秒）
-- ③ "查一下这笔钱最终流向了哪里。"（3秒，但本镜头3秒，台词跨镜头）——她的语气果断
-- ④ 她的眼神——锐利，直觉告诉她这背后有问题
-
-风格：8K竖屏9:16短剧。超写实。灯光（会议室）：冷白专业光，审计报告白纸黑字刺眼。高奢调色。镜头：物理电影镜头，180°快门。表演：审计发现——300万+空壳公司=职务侵占/洗钱；黎泱的反应是立刻追查，不拖泥带水。构图：竖屏9:16。连续性：一致。技术：60fps，8K。禁音乐。禁字幕。禁水印。
-环境活动：纸张声、会议室安静。
-15秒。9:16。</div></td></tr>
-<tr data-scene="31-1" data-plan="CU"><td class="c-num">1.2</td><td class="c-plan"><span class="badge p-cu">Close-up</span></td><td class="c-cam">85mm F1.4 · 固定<br>严肃</td><td class="c-act">财务总监"没有实际办公地址，没有社保缴纳记录"。（约3.5秒台词跨镜头）</td></tr>
-<tr data-scene="31-1" data-plan="CU"><td class="c-num">1.3</td><td class="c-plan"><span class="badge p-cu">Close-up</span></td><td class="c-cam">100mm F1.4 · 固定<br>果断</td><td class="c-act">黎泱皱眉"天诚科技？查这笔钱最终流向哪里"。（约4秒台词跨镜头）</td></tr>
-
-<tr data-scene="31-1" data-plan="CU"><td class="c-num">1.4</td><td class="c-plan"><span class="badge p-cu">Close-up</span></td><td class="c-cam">85mm F1.4 · 固定<br>凝重</td><td class="c-act">财务总监展示资金穿透图，三层转账最终流入个人账户。</td>
-<td class="c-script" rowspan="2"><div class="script-inner"><span class="dir">▲ 财务总监在白板上画出资金穿透图：公司账户 → 天诚科技 → 贸易公司 → 个人账户。</span>
-<span class="dir">（转场：江氏总裁办公室）</span></div></td>
-<td class="c-prompt" rowspan="2"><div class="asset-note"><b>@image1</b>=财务总监.png &nbsp; <b>@image2</b>=公司-会议室.png</div><div class="prompt-header"><b>提示词 2</b><span class="tag">[CU · 资金穿透图：公司→天诚→贸易公司→个人账户·转场]</span><span class="dur">15秒 · 无对白</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div><div class="prompt-block">单镜头（one-shot）。
-
-@image1（财务总监，在白板上画图）@image2（会议室）— 同前。道具：白板、资金穿透图（红色箭头标注三层转账）。
-
-⚠️本视频严格只有1个镜头。
-
-机位：85mm F1.4，白板+财务总监中近景。固定凝重。
-背景：会议室，白板上红色箭头。
-动作：财务总监在白板上画出资金穿透图。
-⚠️⚠️⚠️微表演：
-- ① 财务总监拿起马克笔——在白板上画
-- ② 第一个框：公司账户——箭头指向
-- ③ 第二个框：天诚科技——箭头指向
-- ④ 第三个框：贸易公司——箭头指向
-- ⑤ 最后一个框：个人账户（红色问号）
-- ⑥ 财务总监画完——转身看向黎泱
-- ⑦ 黎泱盯着白板——眼神越来越冷
-- ⑧ （转场：江氏总裁办公室）
-
-风格：8K竖屏9:16短剧。超写实。灯光（会议室）：冷白光，白板上红色箭头刺眼。高奢调色。镜头：物理电影镜头，180°快门。表演：资金穿透图的视觉化——三层转账是典型的洗钱手法；红色问号制造悬念：个人账户是谁？构图：竖屏9:16。连续性：一致。技术：60fps，8K。禁音乐。禁字幕。禁水印。
-环境活动：马克笔在白板上的吱吱声。
-15秒。9:16。</div></td></tr>
-<tr data-scene="31-1" data-plan="CU"><td class="c-num">1.5</td><td class="c-plan"><span class="badge p-cu">Close-up</span></td><td class="c-cam">85mm F1.4 · 固定<br>冰冷</td><td class="c-act">黎泱盯着白板上红色箭头和个人账户问号，眼神越来越冷。</td></tr>
-
-</tbody></table></div></section>
-
-<section class="scene pal-red" id="sc31-2">
-  <div class="scene-head"><div class="scene-num-row"><span class="scene-num">SCENE 31-2</span></div><h2 class="scene-title">INT. 江氏集团·总裁办公室 — 日</h2><div class="scene-meta"><span><b>Mood:</b> <i>真相大白、沈雨瑶狱中操控、买公寓、移送公安</i></span><span><b>Characters:</b> 黎泱、江行野（视频连线）、财务总监</span><span class="shot-count">5 shots · 2 prompts</span></div></div>
-  <div class="table-wrap"><table class="shotlist"><colgroup><col style="width:50px"><col style="width:100px"><col style="width:130px"><col style="width:auto"><col style="width:22%"><col style="width:42%"></colgroup><thead><tr><th>#</th><th>Plan</th><th>Camera</th><th>Action</th><th>Scene Text</th><th>Seedance 2.0 提示词</th></tr></thead><tbody>
-
-<tr data-scene="31-2" data-plan="CU"><td class="c-num">2.1</td><td class="c-plan"><span class="badge p-cu">Close-up</span></td><td class="c-cam">85mm F1.4 · 固定<br>冰冷</td><td class="c-act">财务总监站在办公桌前汇报穿透核查结果，江行野在欧洲通过视频连线。</td>
-<td class="c-script" rowspan="3"><div class="script-inner"><span class="char">财务总监</span>："经过穿透核查，这笔钱经过三层转账，最终流入了一个个人账户——沈雨瑶。"
-<span class="dir">〔33字 ≈ 8.25秒〕</span>
-<span class="char">江行野</span>（视频，冰冷）："沈雨瑶？她在看守所怎么操作的？"
-<span class="dir">〔13字 ≈ 3.25秒〕</span>
-<span class="char">财务总监</span>："是她在外面的同伙帮她操作的。她用这笔钱在市中心买了一套公寓。"
-<span class="dir">〔30字 ≈ 7.5秒〕</span></div></td>
-<td class="c-prompt" rowspan="3"><div class="asset-note"><b>@image1</b>=财务总监.png &nbsp; <b>@image2</b>=江行野高定西装.jpg（笔记本电脑屏幕中，欧洲酒店背景）&nbsp; <b>@image3</b>=黎泱职业.png &nbsp; <b>@image4</b>=江氏集团-总裁办公室.png</div><div class="prompt-header"><b>提示词 3</b><span class="tag">[CU · 财务总监"最终流入沈雨瑶" + 江行野"看守所怎么操作" + "同伙操作买公寓"]</span><span class="dur">15秒 · 对白19秒（跨提示词）</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div><div class="prompt-block">多机位剪辑（multi-shot）。
-
-@image1（财务总监，站在办公桌前）@image2（江行野，在笔记本电脑屏幕中视频连线，欧洲酒店背景，衬衫袖子卷起）@image3（黎泱，站在窗边听）@image4（江氏总裁办公室，冷白光，落地窗）— 同前。道具：笔记本电脑（视频通话）、银行流水文件。
-
-⚠️对白规则：财务总监"经过穿透核查..."（8.25秒）在镜头1；江行野"沈雨瑶？她在看守所怎么操作的？"（3.25秒）在镜头1；财务总监"是她在外面的同伙..."前半（约3.5秒）在镜头2。
-⚠️本视频严格只有3个镜头。
-
-【镜头1】（7秒）
-机位：85mm F1.4，财务总监中近景。固定冰冷。
-财务总监汇报最终核查结果。
-⚠️⚠️⚠️微表演：
-- ① 财务总监站在办公桌前——手里拿着银行流水
-- ② "经过穿透核查"（2秒）——他翻到最后一页
-- ③ "这笔钱经过三层转账"（2.5秒）——他指着流水
-- ④ "最终流入了一个个人账户"（2秒）——他停顿
-- ⑤ "——沈雨瑶。"（1.75秒，但本镜头7秒，台词跨镜头）——"沈雨瑶"三个字落下
-- ⑥ 笔记本电脑屏幕里——江行野的表情瞬间冰冷
-
-【镜头2】（5秒）
-机位：100mm F1.4，笔记本屏幕ECU。固定。
-江行野在视频中皱眉。
-⚠️⚠️⚠️微表演：
-- ① 财务总监台词余音"——沈雨瑶。"
-- ② 屏幕里江行野——"沈雨瑶？"（1秒）他的眉头紧锁
-- ③ "她在看守所怎么操作的？"（2.25秒）——他的语气冰冷
-- ④ 他的手指在桌面上敲击——思考
-- ⑤ 黎泱在窗边——双臂抱胸，表情冰冷
-
-【镜头3】（3秒）
-机位：85mm F1.4，财务总监中近景。固定。
-财务总监继续说明。
-⚠️⚠️⚠️微表演：
-- ① "是她在外面的同伙帮她操作的。"（3秒，但本镜头3秒，台词跨镜头）——"同伙"他加重
-- ② 黎泱的眼神——更加冰冷
-- ③ 沈雨瑶在看守所里还不忘捞钱——贪婪无度
-
-风格：8K竖屏9:16短剧。超写实。灯光（总裁办公室）：冷白光，笔记本屏幕光照在财务总监脸上。高奢调色。镜头：物理电影镜头，180°快门。表演：真相——沈雨瑶在看守所还通过同伙操控空壳公司套取300万买公寓；江行野的冰冷是愤怒。构图：竖屏9:16。连续性：一致。技术：60fps，8K。禁音乐。禁字幕。禁水印。
-环境活动：纸张声、视频通话声。
-15秒。9:16。</div></td></tr>
-<tr data-scene="31-2" data-plan="ECU"><td class="c-num">2.2</td><td class="c-plan"><span class="badge p-ecu">Extreme CU</span></td><td class="c-cam">100mm F1.4 · 固定<br>冰冷</td><td class="c-act">笔记本屏幕中江行野表情冰冷"她在看守所怎么操作的"。（约3.25秒台词跨镜头）</td></tr>
-<tr data-scene="31-2" data-plan="CU"><td class="c-num">2.3</td><td class="c-plan"><span class="badge p-cu">Close-up</span></td><td class="c-cam">85mm F1.4 · 固定<br>冰冷</td><td class="c-act">财务总监"同伙帮她操作，用这笔钱在市中心买了公寓"。（约4秒台词跨镜头）</td></tr>
-
-<tr data-scene="31-2" data-plan="CU"><td class="c-num">2.4</td><td class="c-plan"><span class="badge p-cu">Close-up</span></td><td class="c-cam">100mm F1.4 · 固定<br>果断</td><td class="c-act">江行野在视频中果断下令，黎泱在旁边点头。</td>
-<td class="c-script" rowspan="2"><div class="script-inner"><span class="char">江行野</span>（视频，果断）："移送公安。职务侵占加洗钱，数罪并罚。"
-<span class="dir">〔15字 ≈ 3.75秒〕</span>
-<span class="dir">▲ 黎泱站在窗边，看着窗外的城市，眼神平静但坚定。沈雨瑶的贪婪，最终将她自己彻底推入了深渊。</span>
-<span class="dir">（本集完）</span></div></td>
-<td class="c-prompt" rowspan="2"><div class="asset-note"><b>@image1</b>=江行野高定西装.jpg（屏幕中）&nbsp; <b>@image2</b>=黎泱职业.png &nbsp; <b>@image3</b>=江氏集团-总裁办公室.png</div><div class="prompt-header"><b>提示词 4</b><span class="tag">[CU · 江行野"移送公安...数罪并罚" + 黎泱窗边坚定·本集卡点]</span><span class="dur">15秒 · 对白3.75秒</span><button class="copy-btn" onclick="copyPrompt(this)">Copy</button></div><div class="prompt-block">多机位剪辑（multi-shot）。
-
-@image1（江行野，视频屏幕中）@image2（黎泱，站在窗边）@image3（总裁办公室，落地窗城市景观）— 同前。
-
-⚠️对白规则：财务总监台词余音"在市中心买了一套公寓。"（约4秒）在镜头1开头；江行野"移送公安。职务侵占加洗钱，数罪并罚。"（3.75秒）在镜头1。
-⚠️本视频严格只有2个镜头。
-⚠️镜头2最后1秒：画面冻结在黎泱站在落地窗前、背影挺拔坚定的画面上——本集结束卡点。
-
-【镜头1】（7秒）
-机位：85mm F1.4，笔记本屏幕→双人。固定果断。
-江行野在视频中果断下令。
-⚠️⚠️⚠️微表演：
-- ① 财务总监台词余音"买了一套公寓。"
-- ② 屏幕里江行野的表情——冰冷果断
-- ③ "移送公安。"（1秒）——他没有犹豫
-- ④ "职务侵占加洗钱"（1.5秒）——他一一列举
-- ⑤ "数罪并罚。"（1.25秒）——他的语气不容置疑
-- ⑥ 财务总监点头——"明白。"
-- ⑦ 黎泱在窗边——微微点头
-
-【镜头2】（8秒）
-机位：50mm中景，竖屏。固定缓慢。
-黎泱站在落地窗前，看着窗外的城市。
-⚠️⚠️⚠️微表演：
-- ① 财务总监离开——办公室门关上
-- ② 黎泱站在落地窗前——背对镜头
-- ③ 窗外的城市——阳光明媚，车水马龙
-- ④ 她的背影——挺拔、坚定
-- ⑤ 她微微侧头——侧脸在光中半明半暗
-- ⑥ 她的眼神——平静，没有快意，只有"恶有恶报"的淡然
-- ⑦ 沈雨瑶的贪婪——300万买公寓，换来的是数罪并罚
-- ⑧ 最后1秒：画面冻结在她挺拔的背影上
-- ⑨ 本集完（第32集：沈雨瑶看守所悔恨+江行野回国）
-
-风格：8K竖屏9:16短剧。超写实。灯光（总裁办公室）：落地窗明亮日光，黎泱背影逆光。高奢调色。镜头：物理电影镜头，180°快门。表演：正义不迟到——"移送公安，数罪并罚"是法律的制裁；黎泱的平静说明她已经不为这些人牵动情绪了；她站在阳光下，而沈雨瑶将在黑暗中度过更久。构图：竖屏9:16。连续性：一致。技术：60fps，8K。禁音乐。禁字幕。禁水印。
-环境活动：门声、窗外城市声。
-15秒。9:16。</div></td></tr>
-<tr data-scene="31-2" data-plan="MS"><td class="c-num">2.5</td><td class="c-plan"><span class="badge p-ms">Medium shot</span></td><td class="c-cam">50mm · 固定缓慢<br>坚定→冻结</td><td class="c-act">黎泱站在落地窗前看城市，背影挺拔坚定，侧脸半明半暗。最后1秒冻结——本集完。（3.75秒台词）</td></tr>
-
-</tbody></table></div></section>
-</div>
-<script>
-document.getElementById('search').addEventListener('input',filterRows);document.getElementById('planFilter').addEventListener('change',filterRows);
-function filterRows(){const q=document.getElementById('search').value.toLowerCase();const p=document.getElementById('planFilter').value;const rows=document.querySelectorAll('table.shotlist tbody tr');let a=false;rows.forEach(r=>{const t=r.textContent.toLowerCase();const rp=r.getAttribute('data-plan')||'';const v=(!q||t.includes(q))&&(!p||rp===p);r.style.display=v?'':'none';if(v)a=true;});document.querySelectorAll('section.scene').forEach(s=>{const vr=s.querySelectorAll('tbody tr:not([style*="display: none"])');s.style.display=vr.length>0?'':'none';});}
-function resetFilters(){document.getElementById('search').value='';document.getElementById('planFilter').value='';filterRows();}
-function copyPrompt(b){const h=b.parentElement;const pb=h.nextElementSibling;if(pb){navigator.clipboard.writeText(pb.textContent).then(()=>{b.textContent='Copied!';b.classList.add('copied');setTimeout(()=>{b.textContent='Copy';b.classList.remove('copied');},2000);}).catch(()=>{const r=document.createRange();r.selectNode(pb);const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();b.textContent='Copied!';b.classList.add('copied');setTimeout(()=>{b.textContent='Copy';b.classList.remove('copied');},2000);});}}
+    // 平台筛选：按行 data-platform 属性过滤排行表
+    var pf = document.getElementById('platform-filter');
+    if (pf) {
+        pf.addEventListener('change', function () {
+            var v = pf.value;
+            document.querySelectorAll('#ranking-tbody tr').forEach(function (tr) {
+                tr.style.display = (v === 'all' || tr.dataset.platform === v)
+                    ? '' : 'none';
+            });
+        });
+    }
+})();
 </script>
 </body>
 </html>
